@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>HodlInfo</title></head><body>
+        <style>
+
+body{
+    background-color:#1e2530;
+   
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+#parent{
+    display:flex;
+    flex-direction: row;
+justify-content: space-between;
+}
+.buttons{
+    display:flex;
+    flex-direction:row;
+    color:white;
+    justify-content:center;
+    margin-top:15px;
+
+}
+.INR,.BTC,.BUY{
+    padding:7px;
+    
+    margin:10px;
+    border-radius:5px;
+    background-color:#353d4a;
+    font-family:Arial,Helvetica,sans-serif;
+}
+.controls{ display:flex;
+
+flex-direction:row;
+justify-content:space-between;
+margin-top:15px;}
+.timer{
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:20px;
+    padding:5px;
+   width:25px;
+   height:25px;
+   color: rgb(61, 198, 193);
+
+   border-style:solid;
+   border-radius:50%;
+
+   border-color:rgb(61, 198, 193);
+   margin:10px;
+}
+.telegram{
+    color:white;
+    font-family:Arial,Helvetica,sans-serif;
+    background-color:rgb(61, 198, 193);
+    padding-top:7px;
+    font-size:20px;
+    margin:5px;
+    height:30px;
+    padding-left:15px;
+    padding-right:15px;
+    border-radius:5px;
+margin:10px;
+}
+.slider{
+    color:#353d4a;
+    border-radius:5px;
+}
+.circle{
+    color:rgb(61, 198, 193);
+    border-radius:50%;
+}
+.switch {
+    margin:10px;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(61, 198, 193);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #353d4a;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .line2nd{
+      font-size:20px;
+      color:gray;
+    
+      font-family:Arial,Helvetica,sans-serif;
+  }
+.line3rd{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:20px;
+    margin-right: 100px;
+    margin-left:100px;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+.smallline1{
+    color: rgb(61, 198, 193);
+    font-size:40px;
+}
+.smallline2{
+    color:grey;
+}
+.bigline1{
+    color:white;
+    font-size:50px;
+}
+.headlines{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color:grey;
+    font-size:35px;
+    font-family:Arial,Helvetica,sans-serif;
+    margin:15px;
+    margin-right: 100px;
+    margin-left:100px;
+}
+footer{
+    color:white;
+    font-family:Arial,Helvetica,sans-serif;
+    height:100px;
+    margin:20px;
+    padding:10px;
+    font-size:15px;
+    border-top: 3px solid;
+    border-color:#353d4a;
+    
+}
+.fod{
+    display:flex;
+    flex-direction: row;
+  
+}
+.trading{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family:Arial,Helvetica,sans-serif;
+    color:white;
+    margin-left:75px;
+    margin-right:75px;
+    margin-top:7px;
+    background-color:#353d4a;
+    border-radius:5px;
+    padding:10px;
+    font-size:20px;
+}
+.column{
+    display:flex;
+    flex-direction: column;
+}
+
+        </style>
+    <div id='parent'>
+        <div id='logo'>
+        <img src="https://hodlinfo.com/static/media/HODLINFO.8f78fc06.png" class="fiat-logo" style="padding: 10px; width:258px;height:58px;">
+        <p class="col-12 text-center-xs" style="font-family: Oswald, sans-serif; margin-top: -18px; opacity: 0.8; font-size: 18px; color: gray;">Powered By <a class="footer-text-link" rel="nofollow" target="_blank" href="https://www.finstreet.in/" style="color: rgb(61, 198, 193);"> Finstreet</a> </p>
+        </div>
+                   <div class='buttons'>
+                    <center> <div class='INR'>INR<i class="fas fa-sort-down" style='padding-left:3px;'></i></div></center>
+                     <center>  <div class='BTC'>BTC<i class="fas fa-sort-down" style='padding-left:3px;'></i></div></center>
+                      <center> <div class='BUY'>BUY BTC</div></center>
+                
+                    
+                   </div>
+                   <div class='controls'>
+                       <div class='timer'>
+                           60
+                       </div>
+                       <div class='telegram'><i class="fab fa-telegram-plane" style='background-color: rgb(61, 198, 193);border-style:none;margin:2px;'></i>Connect Telegram</div>
+                       <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                      </label>
+                      
+
+
+
+                   </div>
+
+
+
+
+
+
+    </div>
+    <div class='line2nd'><center><h3>BEST PRICE TO TRADE</h3></center></div>
+    <div class='line3rd'>
+
+        <div class='element1'><span class='smallline1'>0.25%</span><br><center><span class='smallline2'>5 Mins</span></center></div>
+        <div class='element2'><span class='smallline1'>0.25%</span><br><center><span class='smallline2'>5 Mins</span></center></div>
+        <div class='element3'><span class='bigline1'>Rs. 34,34,851</span><br><br><center><span class='smallline2'>Average BTC/INR net price including commission</span></center></div>
+        <div class='element4'><span class='smallline1'>0.25%</span><br><center><span class='smallline2'>5 Mins</span></center></div>
+        <div class='element5'><span class='smallline1'>0.25%</span><br><center><span class='smallline2'>5 Mins</span></center></div>
+
+
+    </div>
+    <img src="http://localhost:3000/images/image1.png" alt='' width=1500px/>
+    <div class='headlines'>
+
+        <div class='headline1'>#</div>
+        <div class='headline2'>name</div>
+        <div class='headline3'>last</div>
+        <div class='headline4'>Buy / Sell Price</div>
+        <div class='headline5'>volume</div>
+        <div class='headline6'>base_unit</div>
+    </div>
+        <%i=1%>
+        <div class='column'>
+        <%for(let curr of currency){%>
+            <div class='trading'>
+     <div class='element1'><b><%-i%></b></div> 
+     <div class='element2'><b><%=curr.name%></b></div>
+     <div class='element3'><b><%=curr.last%></b></div>
+     <div class='element4'><b><%=curr.buy%>/<%=curr.sell%></b></div>
+     <div class='element5'><b><%=curr.volume%></b></div>
+     <div class='element6'><b><%=curr.base_unit%></b></div>
+     <br></div>
+     <%i++%>
+        <%}%>
+        </div>
+   <br>
+    <img src="http://localhost:3000/images/image2.png" alt='' width=1500px/>
+    <footer>
+      <div class='fod'>  <div style='padding:5px;'>Copyright &copy; 2019</div><div style='padding:5px;'> HodlInfo.com </div><div style='padding:5px;'>Developed By <span style='color:rgb(61, 198, 193)'>QuadBTech</span></div> </div><span style='float:right'>Support</span>
+    </footer>
+
+<script>timertext=document.querySelector('.timer')
+    timer=60;
+    
+    window.addEventListener('load',parent)
+    
+    function parent(){
+        setInterval(myTimer, 1000);
+    }
+    function myTimer(){
+        timer--;
+        timertext.innerHTML = timer
+        if(timertext.innerHTML==0){ 
+            timer=61;
+        }
+    }
+    const endpoint = 'api.json';
+    let currency={}
+    
+    async function call(){await fetch(endpoint)
+     .then(blob =>blob.json())
+    .then(data =>currency={...data}
+    
+      );
+     console.log(currency.btcinr)
+     for (const x in currency) {
+        console.log(currency[x].volume)
+      }
+    }
+    
+    window.addEventListener('load',call)</script>
+    
+</body>
+</html>
